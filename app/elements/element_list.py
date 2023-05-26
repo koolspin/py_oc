@@ -128,4 +128,60 @@ def init_element_list():
     elt = Element(18, 39.948, "Ar", "Argon", 3, 18)
     element_by_atomic_num.append(elt)
 
+
+
+    elt = Element(19, 39.098, "K", "Potassium", 4, 1)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(20, 40.078, "Ca", "Calcium", 4, 2)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(21, 44.956, "Sc", "Scandium", 4, 3)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(22, 47.867, "Ti", "Titanium", 4, 4)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(23, 50.942, "V", "Vanadium", 4, 5)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(24, 51.996, "Cr", "Chromium", 4, 6)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(25, 54.938, "Mn", "Manganese", 4, 7)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(26, 55.845, "Fe", "Iron", 4, 8)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(27, 58.933, "Co", "Cobalt", 4, 9)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(28, 58.693, "Ni", "Nickel", 4, 10)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(29, 63.546, "Cu", "Copper", 4, 11)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(30, 65.380, "Zn", "Zinc", 4, 12)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(31, 69.723, "Ga", "Gallium", 4, 13)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(32, 72.640, "Ge", "Germanium", 4, 14)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(33, 74.922, "As", "Arsenic", 4, 15)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(34, 78.960, "Se", "Selenium", 4, 16)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(35, 79.904, "Br", "Bromine", 4, 17)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(36, 83.798, "Kr", "Krypton", 4, 18)
+    element_by_atomic_num.append(elt)
+
     return element_by_atomic_num
