@@ -1,4 +1,5 @@
 from elements.element_list import *
+from elements.element_defs import ElementType
 
 
 def startup():
@@ -7,6 +8,7 @@ def startup():
     for elt in arr:
         print(elt)
         print(elt.mass)
+        print(elt.get_printable_electron_config())
 
     print("##### Noble Gases!")
     for elt in arr:
