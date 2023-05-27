@@ -115,6 +115,60 @@ def init_element_list():
     elt = Element(36, 83.798, "Kr", "Krypton", 4, 18)
     element_by_atomic_num.append(elt)
 
+    # Period 5
+    elt = Element(37, 85.468, "Rb", "Rubidium", 5, 1)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(38, 87.620, "Sr", "Strontium", 5, 2)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(39, 88.906, "Y", "Yttrium", 5, 3)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(40, 91.224, "Zr", "Zirconium", 5, 4)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(41, 92.906, "Nb", "Niobium", 5, 5)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(42, 95.950, "Mo", "Molybdenum", 5, 6)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(43, 98.000, "Tc", "Technetium", 5, 7)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(44, 101.070, "Ru", "Ruthenium", 5, 8)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(45, 102.910, "Rh", "Rhodium", 5, 9)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(46, 106.420, "Pd", "Palladium", 5, 10)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(47, 107.870, "Ag", "Silver", 5, 11)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(48, 112.410, "Cd", "Cadmium", 5, 12)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(49, 114.820, "In", "Indium", 5, 13)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(50, 118.710, "Sn", "Tin", 5, 14)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(51, 121.760, "Sb", "Antimony", 5, 15)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(52, 127.600, "Te", "Tellerium", 5, 16)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(53, 126.900, "I", "Iodine", 5, 17)
+    element_by_atomic_num.append(elt)
+
+    elt = Element(54, 131.290, "Xe", "Xenon", 5, 18)
+    element_by_atomic_num.append(elt)
     #
 
     return element_by_atomic_num

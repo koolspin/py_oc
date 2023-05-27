@@ -120,10 +120,83 @@ class Element:
     def _populate_electron_shells(self):
         """
         Fills in the electron shells array based on the atomic number of the element.
+        TODO: Can we use an algorithm here? Need to fill in the 6th and 7th period
         """
-        previous_period_shells = self._create_period_shell()
-        # TODO: Populate the subshells for the "current" shell
-        self._electron_shells = previous_period_shells
+        self._electron_shells = self._create_period_shell()
+        if self._period == 1:
+            num_electrons = self._number
+            sub_shell = []
+            sub = SubShell(num_electrons, SubShellDesignation.S_TYPE)
+            sub_shell.append(sub)
+            self._electron_shells.append(sub_shell)
+        elif self._period in [2, 3]:
+            prev_shell_electrons = 2
+            if self._period == 3:
+                prev_shell_electrons = 10
+            num_shell_electrons = self._number - prev_shell_electrons
+            num_s_electrons = num_shell_electrons if num_shell_electrons <= 2 else 2
+            num_p_electrons = num_shell_electrons - num_s_electrons
+            sub_shell = []
+            sub = SubShell(num_s_electrons, SubShellDesignation.S_TYPE)
+            sub_shell.append(sub)
+            if num_p_electrons >= 1:
+                sub = SubShell(num_p_electrons, SubShellDesignation.P_TYPE)
+                sub_shell.append(sub)
+            self._electron_shells.append(sub_shell)
+        elif self._period in [4, 5]:
+            prev_shell_electrons = 18
+            if self._period == 5:
+               prev_shell_electrons = 36
+            num_shell_electrons = self._number - prev_shell_electrons
+            sub_shell = []
+            num_s_electrons = 0
+            num_p_electrons = 0
+            num_d_electrons = 0
+            if num_shell_electrons <= 2:
+                # Potassium, Calcium
+                num_s_electrons = num_shell_electrons
+            elif 3 <= num_shell_electrons <= 5:
+                # Scandium, Titanium, Vanadium
+                num_s_electrons = 2
+                num_d_electrons = num_shell_electrons - num_s_electrons
+            elif num_shell_electrons == 6:
+                # Chromium
+                num_s_electrons = 1
+                num_d_electrons = 5
+            elif num_shell_electrons == 7:
+                # Manganese
+                num_s_electrons = 2
+                num_d_electrons = 5
+            elif num_shell_electrons == 8:
+                # Iron
+                num_s_electrons = 2
+                num_d_electrons = 6
+            elif num_shell_electrons == 9:
+                # Cobalt
+                num_s_electrons = 2
+                num_d_electrons = 7
+            elif num_shell_electrons == 10:
+                # Nickel
+                num_s_electrons = 2
+                num_d_electrons = 8
+            elif num_shell_electrons == 11:
+                # Copper
+                num_s_electrons = 1
+                num_d_electrons = 10
+            else:
+                num_s_electrons = 2
+                num_d_electrons = 10
+                num_p_electrons = num_shell_electrons - 12
+            sub = SubShell(num_s_electrons, SubShellDesignation.S_TYPE)
+            sub_shell.append(sub)
+            if num_p_electrons > 0:
+                sub = SubShell(num_p_electrons, SubShellDesignation.P_TYPE)
+                sub_shell.append(sub)
+            if num_d_electrons > 0:
+                prev_shell = self._electron_shells[-1]
+                sub = SubShell(num_d_electrons, SubShellDesignation.D_TYPE)
+                prev_shell.append(sub)
+            self._electron_shells.append(sub_shell)
 
     def _create_period_shell(self):
         """
@@ -201,5 +274,3 @@ class Element:
             sub_shell.append(sub)
             all_period_shells.append(sub_shell)
         return all_period_shells
-
-
