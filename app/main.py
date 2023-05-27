@@ -2,7 +2,7 @@ from elements.element_list import *
 from elements.element_defs import ElementType
 
 
-def startup():
+def startup() -> None:
     arr = init_element_list()
     print("##### All Elements!")
     for elt in arr:

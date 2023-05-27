@@ -1,6 +1,7 @@
+from typing import List
 from elements.element_defs import Element
 
-def init_element_list():
+def init_element_list() -> List[Element]:
     element_by_atomic_num = []
 
     # Period 1

@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import List
 
 
 class ElementType(Enum):
@@ -15,26 +16,24 @@ class ElementType(Enum):
 
 
 class SubShellDesignation(Enum):
-    TYPE_UNKNOWN = 0
-    S_TYPE = 1
-    P_TYPE = 2
-    D_TYPE = 3
-    F_TYPE = 4
+    TYPE_UNKNOWN = '?'
+    S_TYPE = 's'
+    P_TYPE = 'p'
+    D_TYPE = 'd'
+    F_TYPE = 'f'
 
 
 class SubShell:
     """
     The definition of an electron shell
     """
-    def __init__(self, electron_count, subshell_type):
-        self._electron_count = electron_count
-        self._subshell_type = subshell_type
-        self._type_map = {SubShellDesignation.S_TYPE: 's', SubShellDesignation.P_TYPE: 'p',
-                          SubShellDesignation.D_TYPE: 'd', SubShellDesignation.F_TYPE: 'f'}
+    def __init__(self, electron_count: int, subshell_type: SubShellDesignation) -> None:
+        self._electron_count: int = electron_count
+        self._subshell_type: SubShellDesignation = subshell_type
 
-    def __str__(self):
+    def __str__(self) -> str:
         if self._subshell_type != SubShellDesignation.TYPE_UNKNOWN:
-            return "{0}^{1}".format(self._type_map[self._subshell_type], self._electron_count)
+            return "{0}^{1}".format(self._subshell_type.value, self._electron_count)
         else:
             return "?^{0}".format(self._electron_count)
 
@@ -49,38 +48,38 @@ class Element:
     Or should we calculate it based on the atomic number?
     """
 
-    def __init__(self, number, mass, symbol, name, period, group):
-        self._number = number
-        self._mass = mass
-        self._symbol = symbol
-        self._name = name
-        self._period = period
-        self._group = group
-        self._electron_shells = []
+    def __init__(self, number: int, mass: float, symbol: str, name: str, period: int, group: int) -> None:
+        self._number: int = number
+        self._mass: float = mass
+        self._symbol: str = symbol
+        self._name: str = name
+        self._period: int = period
+        self._group: int = group
+        self._electron_shells: List[List[SubShell]] = []
         self._set_element_type()
         self._populate_electron_shells()
 
-    def __str__(self):
+    def __str__(self) -> str:
         return "{0} ({1}) - {2}".format(self._symbol, self._name, self._element_type)
 
     @property
-    def number(self):
+    def number(self) -> int:
         return self._number
 
     @property
-    def mass(self):
+    def mass(self) -> float:
         return self._mass
 
     @property
-    def symbol(self):
+    def symbol(self) -> str:
         return self._symbol
 
     @property
-    def name(self):
+    def name(self) -> str:
         return self._name
 
     @property
-    def element_type(self):
+    def element_type(self) -> ElementType:
         return self._element_type
 
     def get_printable_electron_config(self) -> str:
@@ -92,7 +91,7 @@ class Element:
             sh_num += 1
         return electron_config
 
-    def _set_element_type(self):
+    def _set_element_type(self) -> None:
         """
         Set the element type enum based on the atomic number.
         """
@@ -117,7 +116,7 @@ class Element:
         if 89 <= self._number <= 103:
             self._element_type = ElementType.ACTINIDE
 
-    def _populate_electron_shells(self):
+    def _populate_electron_shells(self) -> None:
         """
         Fills in the electron shells array based on the atomic number of the element.
         TODO: Can we use an algorithm here? Need to fill in the 6th and 7th period
@@ -198,7 +197,7 @@ class Element:
                 prev_shell.append(sub)
             self._electron_shells.append(sub_shell)
 
-    def _create_period_shell(self):
+    def _create_period_shell(self) -> List[List[SubShell]]:
         """
         Create the base shells by creating the shells as appropriate for the noble gas from
         the previous Period.
