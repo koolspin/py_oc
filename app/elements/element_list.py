@@ -170,6 +170,63 @@ def init_element_list() -> List[Element]:
 
     elt = Element(54, 131.290, "Xe", "Xenon", 5, 18, "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 5s^2 5p^6")
     element_by_atomic_num.append(elt)
+
+    # Period 6
+    elt = Element(55, 132.910, "Cs", "Caesium", 6, 1, "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 5s^2 5p^6 6s^1")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(56, 137.330, "Ba", "Barium", 6, 2, "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 5s^2 5p^6 6s^2")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(57, 138.910, "La", "Lanthanum", 6, 3, "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 5s^2 5p^6 5d^1 6s^2")
+    element_by_atomic_num.append(elt)
+
+    # TODO: Lanthanides go here
+
+    elt = Element(72, 178.490, "Hf", "Hafnium", 6, 4, "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 4f^14 5s^2 5p^6 5d^2 6s^2")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(73, 180.950, "Ta", "Tantalum", 6, 5, "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 4f^14 5s^2 5p^6 5d^3 6s^2")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(74, 183.840, "W", "Tungsten", 6, 6, "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 4f^14 5s^2 5p^6 5d^4 6s^2")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(75, 186.210, "Re", "Rhenium", 6, 7, "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 4f^14 5s^2 5p^6 5d^5 6s^2")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(76, 190.230, "Os", "Osmium", 6, 8, "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 4f^14 5s^2 5p^6 5d^6 6s^2")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(77, 192.220, "Ir", "Iridium", 6, 9, "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 4f^14 5s^2 5p^6 5d^7 6s^2")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(78, 195.080, "Pt", "Platinum", 6, 10, "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 4f^14 5s^2 5p^6 5d^9 6s^1")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(79, 196.970, "Au", "Gold", 6, 11, "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 4f^14 5s^2 5p^6 5d^10 6s^1")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(80, 200.590, "Hg", "Mercury", 6, 12, "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 4f^14 5s^2 5p^6 5d^10 6s^2")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(81, 204.380, "Tl", "Thalium", 6, 13, "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 4f^14 5s^2 5p^6 5d^10 6s^2 6p^1")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(82, 207.200, "Pb", "Lead", 6, 14, "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 4f^14 5s^2 5p^6 5d^10 6s^2 6p^2")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(83, 208.980, "Bi", "Bismuth", 6, 15, "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 4f^14 5s^2 5p^6 5d^10 6s^2 6p^3")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(84, 209.000, "Po", "Polonium", 6, 16, "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 4f^14 5s^2 5p^6 5d^10 6s^2 6p^4")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(85, 210.000, "At", "Astatine", 6, 17, "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 4f^14 5s^2 5p^6 5d^10 6s^2 6p^5")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(86, 222.000, "Rn", "Radon", 6, 18, "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 4f^14 5s^2 5p^6 5d^10 6s^2 6p^6")
+    element_by_atomic_num.append(elt)
     #
 
     return element_by_atomic_num
