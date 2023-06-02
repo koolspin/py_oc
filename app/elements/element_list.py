@@ -229,4 +229,80 @@ def init_element_list() -> List[Element]:
     element_by_atomic_num.append(elt)
     #
 
+    # Period 7
+    elt = Element(87, 223.000, "Fr", "Francium", 7, 1,
+                  "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 4f^14 5s^2 5p^6 5d^10 6s^2 6p^6 7s^1")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(88, 226.000, "Ra", "Radium", 7, 2,
+                  "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 4f^14 5s^2 5p^6 5d^10 6s^2 6p^6 7s^2")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(89, 227.000, "Ac", "Actinium", 7, 3,
+                  "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 4f^14 5s^2 5p^6 5d^10 6s^2 6p^6 6d^1 7s^2")
+    element_by_atomic_num.append(elt)
+
+    # TODO: Actinides go here
+
+    elt = Element(104, 267.000, "Rf", "Rutherfordium", 7, 4,
+                  "1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2 4p^6 4d^10 4f^14 5s^2 5p^6 5d^10 5f^14 6s^2 6p^6 6d^2 7s^2")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(105, 262.000, "Db", "Dubnium", 7, 5,
+                  "")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(106, 269.000, "Sg", "Seaborgium", 7, 6,
+                  "")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(107, 264.000, "Bh", "Bohrium", 7, 7,
+                  "")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(108, 269.000, "Hs", "Hassium", 7, 8,
+                  "")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(109, 278.000, "Mt", "Meitnerium", 7, 9,
+                  "")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(110, 281.000, "Ds", "Darmstadtium", 7, 10,
+                  "")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(111, 282.000, "Rg", "Roentgenium", 7, 11,
+                  "")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(112, 285.000, "Cn", "Copernicium", 7, 12,
+                  "")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(113, 286.000, "Nh", "Nihonium", 7, 13,
+                  "")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(114, 289.000, "Fl", "Flerovium", 7, 14,
+                  "")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(115, 289.000, "Mc", "Moscovium", 7, 15,
+                  "")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(116, 293.000, "Lv", "Livermorium", 7, 16,
+                  "")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(117, 294.000, "Ts", "Tennessine", 7, 17,
+                  "")
+    element_by_atomic_num.append(elt)
+
+    elt = Element(118, 294.000, "Og", "Oganesson", 7, 18,
+                  "")
+    element_by_atomic_num.append(elt)
+    #
+
     return element_by_atomic_num
