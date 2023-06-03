@@ -1,6 +1,6 @@
 import re
 from enum import Enum
-from typing import List
+from typing import List, Optional
 
 
 class ElementType(Enum):
@@ -49,7 +49,12 @@ class Element:
     Or should we calculate it based on the atomic number?
     """
 
-    def __init__(self, number: int, mass: float, symbol: str, name: str, period: int, group: int, config: str) -> None:
+    def __init__(self, number: int, mass: float, symbol: str, name: str, period: int, group: int, config: str, id: Optional[int]) -> None:
+        # Note this id is used only to find unique atoms in our universe :-)
+        # This is used only for stupid programming tricks and, as far as we know, this does not represent an attribute
+        # of the physical world.
+        self._id = 0
+        #
         self._number: int = number
         self._mass: float = mass
         self._symbol: str = symbol
@@ -60,9 +65,15 @@ class Element:
         self._electron_shells: List[List[SubShell]] = []
         self._set_element_type()
         self._populate_electron_shells_with_config(config)
+        if id is not None:
+            self._id = id
 
     def __str__(self) -> str:
-        return "{0} ({1}) - {2}".format(self._symbol, self._name, self._element_type)
+        return "{0}: {1} ({2}) - {3}".format(self._id, self._symbol, self._name, self._element_type)
+
+    @property
+    def id(self) -> int:
+        return self._id
 
     @property
     def number(self) -> int:
