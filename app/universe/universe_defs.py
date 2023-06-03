@@ -3,7 +3,7 @@ from typing import List, Optional
 from app.elements.organic_elements import *
 
 
-class Universe():
+class Universe:
     """
     Universe, in this context means a system for containing raw (unbound) elements as well as molecules,
     identifying instances of each as well as managing the relationships between them.
@@ -11,6 +11,9 @@ class Universe():
     def __init__(self) -> None:
         # All atoms in the universe!
         self._element_by_id: List[Element] = []
+
+    def __iter__(self):
+        return UniverseElementIter(self)
 
     def get_element_by_id(self, id: int) -> Optional[Element]:
         try:
@@ -59,3 +62,23 @@ class Universe():
         elt = Element(number, mass, symbol, name, period, group, config, id)
         self._element_by_id.append(elt)
         return elt
+
+
+class UniverseElementIter:
+    """
+    Iterate over all elements in the Universe
+    """
+    def __init__(self, universe: Universe) -> None:
+        self._universe = universe
+        self._ix: int = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self) -> Element:
+        elt = self._universe.get_element_by_id(self._ix)
+        if elt is not None:
+            self._ix += 1
+            return elt
+        else:
+            raise StopIteration
