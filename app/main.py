@@ -5,7 +5,8 @@ from app.elements.element_defs import ElementType
 
 def startup() -> None:
     universe = Universe()
-    init_element_list(universe)
+    # init_element_list(universe)
+    test_universe(universe)
     print("##### All Elements!")
     for elt in universe:
         print("---------")

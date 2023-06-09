@@ -1,6 +1,6 @@
 from typing import List, Optional
-
 from app.elements.organic_elements import *
+from importlib import *
 
 
 class Universe:
@@ -11,6 +11,7 @@ class Universe:
     def __init__(self) -> None:
         # All atoms in the universe!
         self._element_by_id: List[Element] = []
+        self._module = import_module("app.elements.organic_elements")
 
     def __iter__(self):
         return UniverseElementIter(self)
@@ -21,47 +22,28 @@ class Universe:
         except IndexError:
             return None
 
-    def MakeElementHydrogen(self) -> Element:
+    def organic_factory(self, name: str, count: int) -> List[Element]:
+        atoms = []
         id = len(self._element_by_id)
-        elt = Hydrogen(id)
-        self._element_by_id.append(elt)
-        return elt
+        for ix in range(count):
+            try:
+                klass = getattr(self._module, name)
+                elt = klass(id + ix)
+                self._element_by_id.append(elt)
+                atoms.append(elt)
+            except AttributeError:
+                break
+        return atoms
 
-    def MakeElementCarbon(self) -> Element:
+    def element_factory(self, number: int, mass: float, symbol: str, name: str, period: int, group: int, config: str,
+                        count: int) -> List[Element]:
+        atoms = []
         id = len(self._element_by_id)
-        elt = Carbon(id)
-        self._element_by_id.append(elt)
-        return elt
-
-    def MakeElementOxygen(self) -> Element:
-        id = len(self._element_by_id)
-        elt = Oxygen(id)
-        self._element_by_id.append(elt)
-        return elt
-
-    def MakeElementNitrogen(self) -> Element:
-        id = len(self._element_by_id)
-        elt = Nitrogen(id)
-        self._element_by_id.append(elt)
-        return elt
-
-    def MakeElementPhosphorus(self) -> Element:
-        id = len(self._element_by_id)
-        elt = Phosphorus(id)
-        self._element_by_id.append(elt)
-        return elt
-
-    def MakeElementSulfur(self) -> Element:
-        id = len(self._element_by_id)
-        elt = Sulfur(id)
-        self._element_by_id.append(elt)
-        return elt
-
-    def MakeElement(self, number: int, mass: float, symbol: str, name: str, period: int, group: int, config: str) -> Element:
-        id = len(self._element_by_id)
-        elt = Element(number, mass, symbol, name, period, group, config, id)
-        self._element_by_id.append(elt)
-        return elt
+        for ix in range(count):
+            elt = Element(number, mass, symbol, name, period, group, config, id + ix)
+            self._element_by_id.append(elt)
+            atoms.append(elt)
+        return atoms
 
 
 class UniverseElementIter:
