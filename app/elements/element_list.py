@@ -336,6 +336,15 @@ def init_element_list(universe: Universe) -> None:
     universe.element_factory(118, 294.000, "Og", "Oganesson", 7, 18, "", 1)
 
 def test_universe(universe: Universe) -> None:
-    elt_list = universe.organic_factory(Carbon.name, 6)
-    elt_list = universe.organic_factory(Nitrogen.name, 6)
-    elt_list = universe.organic_factory(Hydrogen.name, 10)
+    carbon_list = universe.organic_factory(Carbon.name, 6)
+    carbon_list[0].description = "Methyl Group"
+    carbon_list[1].description = "Double bond"
+    carbon_list[2].description = "Middle Carbon"
+    nitro_list = universe.organic_factory(Nitrogen.name, 6)
+    hydro_list = universe.organic_factory(Hydrogen.name, 10)
+    hydro_list[0].description = "Methyl Group 1"
+    hydro_list[1].description = "Methyl Group 1"
+    hydro_list[2].description = "Methyl Group 1"
+    bond1 = universe.bond_factory(carbon_list[0].id, hydro_list[0].id, 1)
+    bond2 = universe.bond_factory(carbon_list[0].id, hydro_list[1].id, 1)
+    bond3 = universe.bond_factory(carbon_list[0].id, hydro_list[2].id, 1)

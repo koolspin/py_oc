@@ -1,6 +1,8 @@
 import re
 from enum import Enum
-from typing import List, Optional
+from typing import List, Optional, Dict
+
+from app.bonds.bond_defs import ChemicalBond
 
 
 class ElementType(Enum):
@@ -62,6 +64,8 @@ class Element:
         self._period: int = period
         self._group: int = group
         self._original_config: str = config
+        self._description = ""
+        self._bond_map = set()
         self._electron_shells: List[List[SubShell]] = []
         self._set_element_type()
         self._populate_electron_shells_with_config(config)
@@ -69,7 +73,10 @@ class Element:
             self._id = id
 
     def __str__(self) -> str:
-        return "{0}: {1} ({2}) - {3}".format(self._id, self._symbol, self._name, self._element_type)
+        if not self._description:
+            return "{0}: {1} ({2}) - {3}".format(self._id, self._symbol, self._name, self._element_type)
+        else:
+            return "{0}: {1} ({2}) - {3}".format(self._id, self._symbol, self._name, self._description)
 
     @property
     def id(self) -> int:
@@ -95,6 +102,14 @@ class Element:
     def element_type(self) -> ElementType:
         return self._element_type
 
+    @property
+    def description(self) -> str:
+        return self._description
+
+    @description.setter
+    def description(self, value: str) -> None:
+        self._description = value
+
     def get_printable_electron_config(self) -> str:
         electron_config = ""
         sh_num = 1
@@ -103,6 +118,15 @@ class Element:
                 electron_config += "{0}{1} ".format(sh_num, sub)
             sh_num += 1
         return electron_config
+
+    def get_all_bond_ids(self) -> List[int]:
+        return list(self._bond_map)
+
+    def add_bond(self, id: int) -> None:
+        self._bond_map.add(id)
+
+    def remove_bond(self, id: int):
+        self._bond_map.discard(id)
 
     def _set_element_type(self) -> None:
         """
